@@ -1,9 +1,19 @@
 {
   "name": "nextjs-koa-api",
   "version": "0.0.0",
-  "description": "",
-  "keywords": [],
-  "private": true,
+  "description": "Koa.js setup to be used with with Next.js api routes",
+  "keywords": [
+    "nextjs",
+    "next.js",
+    "koa",
+    "koa.js",
+    "koa router",
+    "koa api",
+    "nextjs api",
+    "next.js api",
+    "koa serverles"
+  ],
+  "private": false,
   "author": "Ivan Vlatković",
   "license": "MIT",
   "type": "module",
@@ -11,7 +21,6 @@
   "module": "./dist/prod/index.modern.js",
   "exports": {
     "require": "./dist/prod/index.cjs",
-    "development": "./dist/dev/index.modern.js",
     "default": "./dist/prod/index.modern.js"
   },
   "types": "./dist/types/index.d.ts",
