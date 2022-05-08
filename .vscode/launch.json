@@ -18,6 +18,14 @@
       "runtimeArgs": ["--preserve-symlinks", "--experimental-modules"]
     },
     {
+      "name": "Attach",
+      "type": "node",
+      "request": "attach",
+      "skipFiles": ["<node_internals>/**", "/node_modules/**"],
+      "sourceMaps": true,
+      "port": 9229
+    },
+    {
       "name": "Current test file",
       "type": "node",
       "request": "launch",
@@ -31,9 +39,29 @@
         "--runInBand"
       ],
       "console": "integratedTerminal",
-      "protocol": "inspector",
       "internalConsoleOptions": "neverOpen",
-      "disableOptimisticBPs": true,
+      "skipFiles": [
+        "${workspaceFolder}/node_modules/**/*.js",
+        "<node_internals>/**/*.js"
+      ]
+    },
+    {
+      "name": "2 Current Test File",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/${relativeFileDirname}",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": [
+        "jest",
+        "${file}",
+        "--no-cache",
+        "--watchAll=false",
+        "--runInBand"
+      ],
+      "env": { "JEST_DEBUG": "true" },
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "smartStep": true,
       "skipFiles": [
         "${workspaceFolder}/node_modules/**/*.js",
         "<node_internals>/**/*.js"
