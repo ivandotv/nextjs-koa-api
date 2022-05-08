@@ -1,6 +1,7 @@
 import Router, { RouterOptions } from '@koa/router'
 import { default as Koa } from 'koa'
 import type { NextApiRequest, NextApiResponse } from 'next'
+import onFinished from 'on-finished'
 
 declare module 'koa' {
   type IncomingMessage = NextApiRequest
@@ -19,7 +20,7 @@ type KoaOptions = {
   maxIpsCount?: number
 }
 
-type KoaApiOptions = {
+export type KoaApiOptions = {
   koa?: KoaOptions
   attachBody?: boolean
   router?: Router.RouterOptions
@@ -36,17 +37,13 @@ export class KoaApi extends Koa {
   constructor(options: KoaApiOptions = {}) {
     super(options.koa)
 
-    const { router: routerOpts = {} } = options || {}
     this.options = {
       ...options,
-      attachBody: options?.attachBody ?? true,
-      router: {
-        ...routerOpts,
-        prefix: routerOpts.prefix ?? '/api'
-      }
+      attachBody: options?.attachBody ?? true
     }
 
     this.router = new Router(this.options.router)
+
     if (this.options.attachBody) {
       this.use((ctx, next) => {
         ctx.request.body = ctx.req.body
@@ -55,7 +52,15 @@ export class KoaApi extends Koa {
     }
   }
 
-  run(req: NextApiRequest, res: NextApiResponse) {
+  async run(req: NextApiRequest, res: NextApiResponse) {
+    const p = new Promise((resolve) => onFinished(res, resolve))
+
+    this.callback()(req, res) as unknown as Promise<void>
+
+    return p
+  }
+
+  override callback() {
     if (this.firstRun) {
       this.firstRun = false
       this.use(this.router.routes()).use(
@@ -63,10 +68,10 @@ export class KoaApi extends Koa {
       )
     }
 
-    return this.callback()(req, res)
+    return super.callback()
   }
 
-  getNewRouter(opts?: RouterOptions) {
+  createNewRouter(opts?: RouterOptions) {
     return new Router(opts)
   }
 }
