@@ -1,14 +1,16 @@
+GET  http://localhost:3000/api/
+
+### trigger error
+GET  http://localhost:3000/api/throw
+
+###
 POST http://localhost:3000/api/hello
 Content-Type: application/json
 
 {
-	"name":"ivan"
+	"name":"Luigi"
 }
 
-###
-GET http://localhost:3000/api/instance
+### nested router
+GET http://localhost:3000/api/nested/hello
 Content-Type: application/json
-
-{
-	"name":"ivan-a"
-}
