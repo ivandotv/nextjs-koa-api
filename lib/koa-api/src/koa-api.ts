@@ -55,12 +55,6 @@ export class KoaApi extends Koa {
   async run(req: NextApiRequest, res: NextApiResponse) {
     const p = new Promise((resolve) => onFinished(res, resolve))
 
-    this.callback()(req, res) as unknown as Promise<void>
-
-    return p
-  }
-
-  override callback() {
     if (this.firstRun) {
       this.firstRun = false
       this.use(this.router.routes()).use(
@@ -68,7 +62,9 @@ export class KoaApi extends Koa {
       )
     }
 
-    return super.callback()
+    this.callback()(req, res) as unknown as Promise<void>
+
+    return p
   }
 
   createNewRouter(opts?: RouterOptions) {
