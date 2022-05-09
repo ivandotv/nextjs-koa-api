@@ -57,6 +57,9 @@ importers:
 
   lib/koa-api:
     specifiers:
+      '@babel/core': ^7.17.10
+      '@babel/preset-env': ^7.17.10
+      '@babel/preset-typescript': ^7.16.7
       '@koa/router': ^10.1.1
       '@types/jest': ^27.5.0
       '@types/koa': ^2.13.4
@@ -88,6 +91,9 @@ importers:
       koa: 2.13.4
       on-finished: 2.4.1
     devDependencies:
+      '@babel/core': 7.17.10
+      '@babel/preset-env': 7.17.10_@babel+core@7.17.10
+      '@babel/preset-typescript': 7.16.7_@babel+core@7.17.10
       '@types/jest': 27.5.0
       '@types/koa': 2.13.4
       '@types/koa__router': 8.0.11
@@ -107,7 +113,7 @@ importers:
       jest-mock-console: 1.2.3_jest@28.1.0
       jest-watch-typeahead: 1.1.0_jest@28.1.0
       microbundle: 0.15.0
-      next: 12.1.6
+      next: 12.1.6_@babel+core@7.17.10
       shx: 0.3.4
       supertest: 6.2.3
       typescript: 4.6.4
@@ -1191,6 +1197,20 @@ packages:
       '@babel/helper-plugin-utils': 7.16.7
     dev: true
 
+  /@babel/plugin-transform-typescript/7.16.8_@babel+core@7.17.10:
+    resolution: {integrity: sha512-bHdQ9k7YpBDO2d0NVfkj51DpQcvwIzIusJ7mEUaMlbZq3Kt/U47j24inXZHQ5MDiYpCs+oZiwnXyKedE8+q7AQ==}
+    engines: {node: '>=6.9.0'}
+    peerDependencies:
+      '@babel/core': ^7.0.0-0
+    dependencies:
+      '@babel/core': 7.17.10
+      '@babel/helper-create-class-features-plugin': 7.17.9_@babel+core@7.17.10
+      '@babel/helper-plugin-utils': 7.16.7
+      '@babel/plugin-syntax-typescript': 7.16.7_@babel+core@7.17.10
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
   /@babel/plugin-transform-unicode-escapes/7.16.7_@babel+core@7.17.10:
     resolution: {integrity: sha512-TAV5IGahIz3yZ9/Hfv35TV2xEm+kaBDaZQCn2S/hG9/CZ0DktxJv9eKfPc7yYCvOYR4JGx1h8C+jcSOvgaaI/Q==}
     engines: {node: '>=6.9.0'}
@@ -1335,6 +1355,20 @@ packages:
       '@babel/plugin-transform-react-jsx': 7.16.0_@babel+core@7.17.10
       '@babel/plugin-transform-react-jsx-development': 7.16.0_@babel+core@7.17.10
       '@babel/plugin-transform-react-pure-annotations': 7.16.0_@babel+core@7.17.10
+    dev: true
+
+  /@babel/preset-typescript/7.16.7_@babel+core@7.17.10:
+    resolution: {integrity: sha512-WbVEmgXdIyvzB77AQjGBEyYPZx+8tTsO50XtfozQrkW8QB2rLJpH2lgx0TRw5EJrBxOZQ+wCcyPVQvS8tjEHpQ==}
+    engines: {node: '>=6.9.0'}
+    peerDependencies:
+      '@babel/core': ^7.0.0-0
+    dependencies:
+      '@babel/core': 7.17.10
+      '@babel/helper-plugin-utils': 7.16.7
+      '@babel/helper-validator-option': 7.16.7
+      '@babel/plugin-transform-typescript': 7.16.8_@babel+core@7.17.10
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /@babel/runtime-corejs3/7.17.9:
@@ -6200,7 +6234,7 @@ packages:
     engines: {node: '>= 0.6'}
     dev: false
 
-  /next/12.1.6:
+  /next/12.1.6_@babel+core@7.17.10:
     resolution: {integrity: sha512-cebwKxL3/DhNKfg9tPZDQmbRKjueqykHHbgaoG4VBRH3AHQJ2HO0dbKFiS1hPhe1/qgc2d/hFeadsbPicmLD+A==}
     engines: {node: '>=12.22.0'}
     hasBin: true
@@ -6221,7 +6255,7 @@ packages:
       '@next/env': 12.1.6
       caniuse-lite: 1.0.30001335
       postcss: 8.4.5
-      styled-jsx: 5.0.2
+      styled-jsx: 5.0.2_@babel+core@7.17.10
     optionalDependencies:
       '@next/swc-android-arm-eabi': 12.1.6
       '@next/swc-android-arm64': 12.1.6
@@ -7865,7 +7899,7 @@ packages:
     resolution: {integrity: sha512-IezA2qp+vcdlhJaVm5SOdPPTUu0FCEqfNSli2vRuSIBbu5Nq5UvygTk/VzeCqfLz2Atj3dVII5QBKGZRZ0edzw==}
     dev: true
 
-  /styled-jsx/5.0.2:
+  /styled-jsx/5.0.2_@babel+core@7.17.10:
     resolution: {integrity: sha512-LqPQrbBh3egD57NBcHET4qcgshPks+yblyhPlH2GY8oaDgKs8SK4C3dBh3oSJjgzJ3G5t1SYEZGHkP+QEpX9EQ==}
     engines: {node: '>= 12.0.0'}
     peerDependencies:
@@ -7877,6 +7911,8 @@ packages:
         optional: true
       babel-plugin-macros:
         optional: true
+    dependencies:
+      '@babel/core': 7.17.10
     dev: true
 
   /styled-jsx/5.0.2_react@18.1.0:
