@@ -1,5 +1,5 @@
 import Router, { RouterOptions } from '@koa/router'
-import { default as Koa } from 'koa'
+import Koa from 'koa'
 import type { NextApiRequest, NextApiResponse } from 'next'
 import onFinished from 'on-finished'
 
@@ -11,7 +11,9 @@ declare module 'koa' {
   }
 }
 
-type KoaOptions = {
+export type { Router, RouterOptions }
+
+export type KoaOptions = {
   env?: string
   keys?: string[]
   proxy?: boolean
