@@ -1,10 +1,10 @@
-GET  http://localhost:3000/api/
+GET  http://localhost:3000/api/level_one
 
 ### trigger error
-GET  http://localhost:3000/api/throw
+GET  http://localhost:3000/api/level_one/throw
 
 ###
-POST http://localhost:3000/api/hello
+POST http://localhost:3000/api/level_one/hello
 Content-Type: application/json
 
 {
@@ -12,5 +12,5 @@ Content-Type: application/json
 }
 
 ### nested router
-GET http://localhost:3000/api/nested/hello
+GET http://localhost:3000/api/level_one/nested/hello
 Content-Type: application/json

@@ -2,7 +2,7 @@ import { KoaApi, withKoaApi } from 'nextjs-koa-api'
 
 const api = new KoaApi({
   router: {
-    prefix: '/api'
+    prefix: '/api/level_one'
   }
 })
 
@@ -20,11 +20,12 @@ api.use(async (ctx, next) => {
 })
 
 api.router
-  .get('/hello', (ctx) => {
+  .get('/', (ctx) => {
     ctx.body = {
       method: 'GET',
-      route: '/hello'
+      route: '/'
     }
+    ctx.cookies.set('my_cookie', 'my_cookie_value')
   })
   .post('/hello', (ctx) => {
     ctx.body = ctx.request.body
