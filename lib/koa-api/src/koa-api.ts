@@ -1,4 +1,4 @@
-import Router, { RouterOptions } from '@koa/router'
+import Router from '@koa/router'
 import Koa from 'koa'
 import type { NextApiRequest, NextApiResponse } from 'next'
 import onFinished from 'on-finished'
@@ -11,7 +11,8 @@ declare module 'koa' {
   }
 }
 
-export type { Router, RouterOptions }
+export { Router }
+export { Koa }
 
 export type KoaOptions = {
   env?: string
@@ -29,8 +30,11 @@ export type KoaApiOptions = {
   routerAllowedMethods?: Router.RouterAllowedMethodsOptions
 }
 
-export class KoaApi extends Koa {
-  router: Router
+export class KoaApi<
+  TState extends Koa.DefaultState = Koa.DefaultState,
+  TContext extends Koa.DefaultContext = Koa.DefaultContext
+> extends Koa<TState, TContext> {
+  router: Router<TState, TContext>
 
   protected firstRun = true
 
@@ -47,9 +51,9 @@ export class KoaApi extends Koa {
     this.router = new Router(this.options.router)
 
     if (this.options.attachBody) {
-      this.use((ctx, next) => {
+      this.use(async (ctx, next) => {
         ctx.request.body = ctx.req.body
-        next()
+        await next()
       })
     }
   }
@@ -68,12 +72,8 @@ export class KoaApi extends Koa {
 
     return p
   }
-
-  createNewRouter(opts?: RouterOptions) {
-    return new Router(opts)
-  }
 }
 
-export function withKoaApi(koa: KoaApi) {
+export function withKoaApi(koa: KoaApi<any, any>) {
   return (req: NextApiRequest, res: NextApiResponse) => koa.run(req, res)
 }

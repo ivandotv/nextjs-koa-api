@@ -75,12 +75,5 @@ describe('Koa Api', () => {
 
       expect(result.status).toBe(501)
     })
-
-    test('can create new router', () => {
-      const api = new KoaApi()
-
-      const router = api.createNewRouter()
-      expect(router).toBeInstanceOf(router.constructor)
-    })
   })
 })
