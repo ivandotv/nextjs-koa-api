@@ -1,12 +1,21 @@
-import { KoaApi, withKoaApi } from 'nextjs-koa-api'
+import { Koa, KoaApi, Router, withKoaApi } from 'nextjs-koa-api'
 
-const api = new KoaApi({
+interface ApiState extends Koa.DefaultState {
+  seesion: boolean
+}
+interface ApiContext extends Koa.Context {
+  user: { name: string }
+}
+const api = new KoaApi<ApiState, ApiContext>({
   router: {
     prefix: '/api/level_one'
   }
 })
+api.context.user = { name: 'Lionel' }
 
 api.use(async (ctx, next) => {
+  // ctx.user.name
+  // ctx.state.seesion
   try {
     await next()
   } catch (err: any) {
@@ -35,7 +44,7 @@ api.router
   })
 
 // create nested router
-const subRouter = api.createNewRouter().get('/', (ctx) => {
+const subRouter = new Router<ApiState, ApiContext>().get('/', (ctx) => {
   ctx.body = `nested params: ${JSON.stringify(ctx.params)}`
 })
 
