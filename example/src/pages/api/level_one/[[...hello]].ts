@@ -11,7 +11,6 @@ const api = new KoaApi<ApiState, ApiContext>({
     prefix: '/api/level_one'
   }
 })
-api.context.user = { name: 'Lionel' }
 
 api.use(async (ctx, next) => {
   // ctx.user.name
