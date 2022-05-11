@@ -68,13 +68,3 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: Generate API documenation
-        if: steps.changesets.outputs.published == 'true'
-        run: pnpm gen:docs
-
-      - name: Commit generated documenation
-        if: steps.changesets.outputs.published == 'true'
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: 'Generate docs'
