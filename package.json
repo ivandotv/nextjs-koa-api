@@ -9,7 +9,7 @@
     "lint": "pnpm multi run lint",
     "lint:ci": "pnpm multi run lint:ci",
     "type:build": "pnpm multi run type:build",
-    "build": "pnpm multi run build",
+    "build": "pnpm --filter nextjs-koa-api build ",
     "gen:docs": "pnpm multi run gen:docs",
     "prepare": "husky install",
     "release": "pnpm multi run prepublishOnly --workspace-concurrency 1 && pnpm changeset publish && pnpm multi run postpublishOnly"
