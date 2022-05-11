@@ -58,6 +58,11 @@ export class KoaApi<
     }
   }
 
+  /**
+   * Run koa api with request and response objects
+   * @param req - nextjs request
+   * @param res - nextjs response
+   */
   async run(req: NextApiRequest, res: NextApiResponse) {
     const p = new Promise((resolve) => onFinished(res, resolve))
 
@@ -74,6 +79,11 @@ export class KoaApi<
   }
 }
 
+/**
+ * Helper function for Next.js api routes that automatically runs the KoaApi.
+ * It should be used as default export from the Next.js api route file
+ * @param koa - KoaApi to run
+ */
 export function withKoaApi(koa: KoaApi<any, any>) {
   return (req: NextApiRequest, res: NextApiResponse) => koa.run(req, res)
 }
