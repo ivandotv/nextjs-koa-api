@@ -16,12 +16,11 @@
   "private": false,
   "author": "Ivan Vlatković",
   "license": "MIT",
-  "type": "module",
-  "main": "./dist/prod/index.cjs",
-  "module": "./dist/prod/index.modern.js",
+  "main": "./dist/prod/index.js",
+  "module": "./dist/prod/index.modern.mjs",
   "exports": {
-    "require": "./dist/prod/index.cjs",
-    "default": "./dist/prod/index.modern.js"
+    "require": "./dist/prod/index.js",
+    "default": "./dist/prod/index.modern.mjs"
   },
   "types": "./dist/types/index.d.ts",
   "files": [
