@@ -96,7 +96,7 @@
 
 #### Defined in
 
-[lib/koa-api/src/koa-api.ts:54](https://github.com/ivandotv/nextjs-koa-api/blob/9b06725/lib/koa-api/src/koa-api.ts#L54)
+[lib/koa-api/src/koa-api.ts:54](https://github.com/ivandotv/nextjs-koa-api/blob/9deb975/lib/koa-api/src/koa-api.ts#L54)
 
 ## Properties
 
@@ -232,7 +232,7 @@ node_modules/.pnpm/@types+koa@2.13.4/node_modules/@types/koa/index.d.ts:456
 
 #### Defined in
 
-[lib/koa-api/src/koa-api.ts:48](https://github.com/ivandotv/nextjs-koa-api/blob/9b06725/lib/koa-api/src/koa-api.ts#L48)
+[lib/koa-api/src/koa-api.ts:48](https://github.com/ivandotv/nextjs-koa-api/blob/9deb975/lib/koa-api/src/koa-api.ts#L48)
 
 ---
 
@@ -1292,7 +1292,7 @@ Run koa api with request and response objects
 
 #### Defined in
 
-[lib/koa-api/src/koa-api.ts:77](https://github.com/ivandotv/nextjs-koa-api/blob/9b06725/lib/koa-api/src/koa-api.ts#L77)
+[lib/koa-api/src/koa-api.ts:77](https://github.com/ivandotv/nextjs-koa-api/blob/9deb975/lib/koa-api/src/koa-api.ts#L77)
 
 ---
 
