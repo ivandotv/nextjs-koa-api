@@ -1,5 +1,11 @@
 # nextjs-koa-api
 
+## 1.0.2
+
+### Patch Changes
+
+- 45c6d4c: Add API docs
+
 ## 1.0.1
 
 ### Patch Changes
