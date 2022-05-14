@@ -185,3 +185,7 @@ There is a [example](./example/) directory in this repository, which is a Next.j
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+
+## Api Docs
+
+Automatically generated API documentation can be found [here](./lib//koa-api/docs/api/README.md)

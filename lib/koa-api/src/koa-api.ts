@@ -15,18 +15,29 @@ export { Router }
 export { Koa }
 
 export type KoaOptions = {
+  /** defaulting to the NODE_ENV or "development"*/
   env?: string
+  /**  array of signed cookie keys*/
   keys?: string[]
+  /** when true proxy header fields will be trusted*/
   proxy?: boolean
+  /** offset of .subdomains to ignore, default to 2*/
   subdomainOffset?: number
+  /** proxy ip header, default to X-Forwarded-For*/
   proxyIpHeader?: string
+  /** max ips read from proxy ip header, default to 0 (means infinity)*/
   maxIpsCount?: number
 }
 
+/** Koa API options*/
 export type KoaApiOptions = {
+  /** original koa options*/
   koa?: KoaOptions
+  /** if parsed body from Nextjs request should be attached to ctx.request */
   attachBody?: boolean
+  /** {@link Router.RouterOptions}*/
   router?: Router.RouterOptions
+  /** {@link Router.RouterAllowedMethodsOptions | Router.RouterAllowedMethodsOptions}*/
   routerAllowedMethods?: Router.RouterAllowedMethodsOptions
 }
 

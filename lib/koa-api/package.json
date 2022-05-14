@@ -39,7 +39,8 @@
     "rm-readme": "rm ./README.md",
     "prepublishOnly": "pnpm cp-readme && pnpm build",
     "postpublishOnly": "pnpm rm-readme",
-    "release": "pnpm run prepublishOnly"
+    "release": "pnpm run prepublishOnly",
+    "gen:docs": "rm -rf ./docs/api && typedoc --options typedoc.cjs"
   },
   "repository": {
     "type": "git",
@@ -73,7 +74,9 @@
     "next": "12.1.6",
     "shx": "^0.3.4",
     "supertest": "^6.2.3",
-    "typescript": "^4.6.4"
+    "typescript": "^4.6.4",
+    "typedoc": "^0.22.15",
+    "typedoc-plugin-markdown": "^3.12.1"
   },
   "dependencies": {
     "@koa/router": "^10.1.1",
