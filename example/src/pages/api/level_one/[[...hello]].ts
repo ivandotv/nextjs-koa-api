@@ -1,4 +1,5 @@
 import { Koa, KoaApi, Router, withKoaApi } from 'nextjs-koa-api'
+import koaBody from 'koa-body'
 
 interface ApiState extends Koa.DefaultState {
   seesion: boolean
@@ -7,6 +8,7 @@ interface ApiContext extends Koa.Context {
   user: { name: string }
 }
 const api = new KoaApi<ApiState, ApiContext>({
+  attachBody: true,
   router: {
     prefix: '/api/level_one'
   }
@@ -35,7 +37,7 @@ api.router
     }
     ctx.cookies.set('my_cookie', 'my_cookie_value')
   })
-  .post('/hello', (ctx) => {
+  .post('/hello', koaBody(), (ctx) => {
     ctx.body = ctx.request.body
   })
   .get('/throw', () => {
@@ -52,3 +54,9 @@ const subRouter = new Router<ApiState, ApiContext>().get('/', (ctx) => {
 api.router.use('/nested/:data', subRouter.routes(), subRouter.allowedMethods())
 
 export default withKoaApi(api)
+
+export const config = {
+  api: {
+    bodyParser: false
+  }
+}

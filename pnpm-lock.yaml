@@ -41,7 +41,7 @@ importers:
       koa: 2.13.4
       koa-body: 5.0.0
       next: 12.1.6_react-dom@18.1.0+react@18.1.0
-      nextjs-koa-api: link:../lib/koa-api
+      nextjs-koa-api: 1.0.2
       on-finished: 2.4.1
       react: 18.1.0
       react-dom: 18.1.0_react@18.1.0
@@ -6345,6 +6345,18 @@ packages:
     transitivePeerDependencies:
       - '@babel/core'
       - babel-plugin-macros
+    dev: false
+
+  /nextjs-koa-api/1.0.2:
+    resolution: {integrity: sha512-eZrzgD49Ng3MBpTczqceFSMIgaFMCOsFBIRj+luVMpoaEP3MVxbID+uMNC2tI7UQs4lsb6EtNSQpEPa1LI3L7A==}
+    dependencies:
+      '@koa/router': 10.1.1
+      '@types/koa': 2.13.4
+      '@types/koa__router': 8.0.11
+      koa: 2.13.4
+      on-finished: 2.4.1
+    transitivePeerDependencies:
+      - supports-color
     dev: false
 
   /node-int64/0.4.0:
