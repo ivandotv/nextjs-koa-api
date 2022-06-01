@@ -1,5 +1,11 @@
 # nextjs-koa-api
 
+## 2.0.2
+
+### Patch Changes
+
+- 091c740: update TS types for `attachRouter` `router` argument.
+
 ## 2.0.1
 
 ### Patch Changes
