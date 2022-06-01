@@ -58,7 +58,7 @@ node_modules/.pnpm/@types+koa@2.13.4/node_modules/@types/koa/index.d.ts:541
 
 #### Defined in
 
-[lib/koa-api/src/koa-api.ts:7](https://github.com/ivandotv/nextjs-koa-api/blob/35b7030/lib/koa-api/src/koa-api.ts#L7)
+[lib/koa-api/src/koa-api.ts:7](https://github.com/ivandotv/nextjs-koa-api/blob/2a4668e/lib/koa-api/src/koa-api.ts#L7)
 
 ---
 
@@ -122,7 +122,7 @@ node_modules/.pnpm/@types+koa@2.13.4/node_modules/@types/koa/index.d.ts:736
 
 #### Defined in
 
-[lib/koa-api/src/koa-api.ts:8](https://github.com/ivandotv/nextjs-koa-api/blob/35b7030/lib/koa-api/src/koa-api.ts#L8)
+[lib/koa-api/src/koa-api.ts:8](https://github.com/ivandotv/nextjs-koa-api/blob/2a4668e/lib/koa-api/src/koa-api.ts#L8)
 
 ## Variables
 
