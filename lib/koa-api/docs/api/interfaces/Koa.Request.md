@@ -105,7 +105,7 @@ node_modules/.pnpm/@types+koa@2.13.4/node_modules/@types/koa/index.d.ts:703
 
 #### Defined in
 
-[lib/koa-api/src/koa-api.ts:10](https://github.com/ivandotv/nextjs-koa-api/blob/6436201/lib/koa-api/src/koa-api.ts#L10)
+[lib/koa-api/src/koa-api.ts:10](https://github.com/ivandotv/nextjs-koa-api/blob/5ef1256/lib/koa-api/src/koa-api.ts#L10)
 
 ---
 

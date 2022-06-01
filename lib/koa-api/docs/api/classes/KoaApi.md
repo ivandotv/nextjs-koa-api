@@ -43,7 +43,6 @@
 ### Methods
 
 - [addListener](KoaApi.md#addlistener)
-- [attachRouter](KoaApi.md#attachrouter)
 - [callback](KoaApi.md#callback)
 - [createContext](KoaApi.md#createcontext)
 - [emit](KoaApi.md#emit)
@@ -97,7 +96,7 @@
 
 #### Defined in
 
-[lib/koa-api/src/koa-api.ts:54](https://github.com/ivandotv/nextjs-koa-api/blob/6436201/lib/koa-api/src/koa-api.ts#L54)
+[lib/koa-api/src/koa-api.ts:54](https://github.com/ivandotv/nextjs-koa-api/blob/5ef1256/lib/koa-api/src/koa-api.ts#L54)
 
 ## Properties
 
@@ -233,7 +232,7 @@ node_modules/.pnpm/@types+koa@2.13.4/node_modules/@types/koa/index.d.ts:456
 
 #### Defined in
 
-[lib/koa-api/src/koa-api.ts:48](https://github.com/ivandotv/nextjs-koa-api/blob/6436201/lib/koa-api/src/koa-api.ts#L48)
+[lib/koa-api/src/koa-api.ts:48](https://github.com/ivandotv/nextjs-koa-api/blob/5ef1256/lib/koa-api/src/koa-api.ts#L48)
 
 ---
 
@@ -357,29 +356,6 @@ Alias for `emitter.on(eventName, listener)`.
 #### Defined in
 
 node_modules/.pnpm/@types+node@17.0.31/node_modules/@types/node/events.d.ts:327
-
----
-
-### attachRouter
-
-▸ **attachRouter**(`path`, `router`): [`KoaApi`](KoaApi.md)<`TState`, `TContext`\>
-
-Attaches router to a particular path. Internally it setups a prefix on the router, and calls `router.routes()` and `router.allowedMethods()`
-
-#### Parameters
-
-| Name     | Type                                                                                                                                 | Description                  |
-| :------- | :----------------------------------------------------------------------------------------------------------------------------------- | :--------------------------- |
-| `path`   | `string`                                                                                                                             | path to attach the router to |
-| `router` | [`Router`](Router.md)<[`DefaultState`](../interfaces/Koa.DefaultState.md), [`DefaultContext`](../interfaces/Koa.DefaultContext.md)\> | router to attach             |
-
-#### Returns
-
-[`KoaApi`](KoaApi.md)<`TState`, `TContext`\>
-
-#### Defined in
-
-[lib/koa-api/src/koa-api.ts:78](https://github.com/ivandotv/nextjs-koa-api/blob/6436201/lib/koa-api/src/koa-api.ts#L78)
 
 ---
 
@@ -1316,7 +1292,7 @@ Run koa api with request and response objects
 
 #### Defined in
 
-[lib/koa-api/src/koa-api.ts:89](https://github.com/ivandotv/nextjs-koa-api/blob/6436201/lib/koa-api/src/koa-api.ts#L89)
+[lib/koa-api/src/koa-api.ts:78](https://github.com/ivandotv/nextjs-koa-api/blob/5ef1256/lib/koa-api/src/koa-api.ts#L78)
 
 ---
 
