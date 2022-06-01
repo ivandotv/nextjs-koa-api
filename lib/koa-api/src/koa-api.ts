@@ -7,7 +7,7 @@ declare module 'koa' {
   type IncomingMessage = NextApiRequest
   type ServerResponse = NextApiResponse
   interface Request extends Koa.BaseRequest {
-    body?: any
+    body?: unknown
   }
 }
 
