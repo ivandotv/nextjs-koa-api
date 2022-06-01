@@ -1,6 +1,6 @@
 {
   "name": "nextjs-koa-api",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Koa.js setup to be used with with Next.js api routes",
   "keywords": [
     "nextjs",

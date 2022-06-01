@@ -1,5 +1,12 @@
 # nextjs-koa-api
 
+## 2.0.1
+
+### Patch Changes
+
+- 87585cd: update function `attachRouter` to accept `KoaApi` with any context
+- 9ef9ccc: update docs: explain `attachRouter` function usage
+
 ## 2.0.0
 
 ### Major Changes
