@@ -1,6 +1,12 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import request from 'supertest'
-import { KoaApi, KoaApiOptions, Router, withKoaApi } from '../index'
+import {
+  attachRouter,
+  KoaApi,
+  KoaApiOptions,
+  Router,
+  withKoaApi
+} from '../index'
 
 describe('Koa Api', () => {
   describe('Request body', () => {
@@ -89,7 +95,7 @@ describe('Koa Api', () => {
           return next()
         })
 
-        api.attachRouter(mountPath, router)
+        attachRouter(mountPath, api, router)
 
         const result = await request(withKoaApi(api)).post(mountPath)
 
@@ -108,7 +114,7 @@ describe('Koa Api', () => {
           return next()
         })
 
-        api.attachRouter(mountPath, router)
+        attachRouter(mountPath, api, router)
 
         const result = await request(withKoaApi(api)).post(mountPath)
 

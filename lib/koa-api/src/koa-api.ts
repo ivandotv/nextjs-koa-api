@@ -71,17 +71,6 @@ export class KoaApi<
   }
 
   /**
-   * Attaches router to a particular path. Internally it setups a prefix on the router, and calls `router.routes()` and `router.allowedMethods()`
-   * @param path - path to attach the router to
-   * @param router - router to attach
-   */
-  attachRouter(path: string, router: Router): this {
-    this.use(router.prefix(path).routes()).use(router.allowedMethods())
-
-    return this
-  }
-
-  /**
    * Run koa api with request and response objects
    * @param req - nextjs request
    * @param res - nextjs response
@@ -109,4 +98,13 @@ export class KoaApi<
  */
 export function withKoaApi(koa: KoaApi<any, any>) {
   return (req: NextApiRequest, res: NextApiResponse) => koa.run(req, res)
+}
+
+/**
+ * Attaches router to a particular path. Internally it setups a prefix on the router, and calls `router.routes()` and `router.allowedMethods()`
+ * @param path - path to attach the router to
+ * @param router - router to attach
+ */
+export function attachRouter(path: string, app: KoaApi, router: Router) {
+  app.use(router.prefix(path).routes()).use(router.allowedMethods())
 }
