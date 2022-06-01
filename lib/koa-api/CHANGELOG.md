@@ -1,5 +1,13 @@
 # nextjs-koa-api
 
+## 2.0.0
+
+### Major Changes
+
+- daa0024: Move `attachRouter` from `KoaApi` class to a special function.
+
+  I couldn not make the types work when trying to add the `attachRouter` to augmented `koa` typescript module.
+
 ## 1.1.0
 
 ### Minor Changes
