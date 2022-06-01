@@ -108,7 +108,7 @@ export function withKoaApi(koa: KoaApi<any, any>) {
 export function attachRouter(
   path: string,
   app: KoaApi<any, any>,
-  router: Router
+  router: Router<any, any>
 ) {
   app.use(router.prefix(path).routes()).use(router.allowedMethods())
 }
