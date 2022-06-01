@@ -43,7 +43,7 @@ Koa API options
 
 #### Defined in
 
-[lib/koa-api/src/koa-api.ts:33](https://github.com/ivandotv/nextjs-koa-api/blob/9deb975/lib/koa-api/src/koa-api.ts#L33)
+[lib/koa-api/src/koa-api.ts:33](https://github.com/ivandotv/nextjs-koa-api/blob/6436201/lib/koa-api/src/koa-api.ts#L33)
 
 ---
 
@@ -64,7 +64,7 @@ Koa API options
 
 #### Defined in
 
-[lib/koa-api/src/koa-api.ts:17](https://github.com/ivandotv/nextjs-koa-api/blob/9deb975/lib/koa-api/src/koa-api.ts#L17)
+[lib/koa-api/src/koa-api.ts:17](https://github.com/ivandotv/nextjs-koa-api/blob/6436201/lib/koa-api/src/koa-api.ts#L17)
 
 ## Functions
 
@@ -100,4 +100,4 @@ It should be used as default export from the Next.js api route file
 
 #### Defined in
 
-[lib/koa-api/src/koa-api.ts:98](https://github.com/ivandotv/nextjs-koa-api/blob/9deb975/lib/koa-api/src/koa-api.ts#L98)
+[lib/koa-api/src/koa-api.ts:110](https://github.com/ivandotv/nextjs-koa-api/blob/6436201/lib/koa-api/src/koa-api.ts#L110)
