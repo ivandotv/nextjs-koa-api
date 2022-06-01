@@ -64,9 +64,21 @@ export class KoaApi<
     if (this.options.attachBody) {
       this.use(async (ctx, next) => {
         ctx.request.body = ctx.req.body
-        await next()
+
+        return next()
       })
     }
+  }
+
+  /**
+   * Attaches router to a particular path. Internally it setups a prefix on the router, and calls `router.routes()` and `router.allowedMethods()`
+   * @param path - path to attach the router to
+   * @param router - router to attach
+   */
+  attachRouter(path: string, router: Router): this {
+    this.use(router.prefix(path).routes()).use(router.allowedMethods())
+
+    return this
   }
 
   /**

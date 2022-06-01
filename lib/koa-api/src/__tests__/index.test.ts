@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import request from 'supertest'
-import { KoaApi, KoaApiOptions, withKoaApi } from '../index'
+import { KoaApi, KoaApiOptions, Router, withKoaApi } from '../index'
 
 describe('Koa Api', () => {
   describe('Request body', () => {
@@ -74,6 +74,46 @@ describe('Koa Api', () => {
       const result = await request(withKoaApi(api)).search('/hello')
 
       expect(result.status).toBe(501)
+    })
+
+    describe('Attach router', () => {
+      test('attach a custom router', async () => {
+        const api = new KoaApi()
+        const router = new Router()
+        const mountPath = '/some-path/for-router'
+        const responseBody = { msg: 'hello' }
+
+        router.post('/', async (ctx, next) => {
+          ctx.body = responseBody
+
+          return next()
+        })
+
+        api.attachRouter(mountPath, router)
+
+        const result = await request(withKoaApi(api)).post(mountPath)
+
+        expect(result.body).toEqual(responseBody)
+        expect(result.status).toBe(200)
+      })
+
+      test('attached router can respond to not allowed methods', async () => {
+        const api = new KoaApi()
+        const router = new Router()
+        const mountPath = '/some-path/for-router'
+
+        router.get('/', async (ctx, next) => {
+          ctx.body = { msg: 'hello' }
+
+          return next()
+        })
+
+        api.attachRouter(mountPath, router)
+
+        const result = await request(withKoaApi(api)).post(mountPath)
+
+        expect(result.status).toBe(405)
+      })
     })
   })
 })

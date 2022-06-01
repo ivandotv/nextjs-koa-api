@@ -12,12 +12,14 @@
 - [Installation](#installation)
 - [Usage](#usage)
   - [Routing](#routing)
+  - [Attaching a custom router](#attaching-a-custom-router)
   - [Nextjs request and response objects](#nextjs-request-and-response-objects)
     - [Body data](#body-data)
 - [Typescript](#typescript)
 - [Testing](#testing)
 - [Example](#example)
 - [License](#license)
+- [Api Docs](#api-docs)
 
 <!-- tocstop -->
 
@@ -27,7 +29,7 @@ Nextjs Koa API is a library that packages [Koa.js](https://github.com/koajs/koa)
 
 ## Motivation
 
-Using Next.js routes is pretty straightforward however, doing something like REST API with CRUD routes requires a more complicated setup. You end up using the `switch` statement to check which `http method` is used and then which `url` is requested, and soon you end up with a spaghetti code in your API route that is hard to maintain and test. It would be great if we could use tried and tested `HTTP` framework directly inside the routes.
+Using Next.js routes is pretty straightforward, however, doing something like REST API with CRUD routes requires a more complicated setup. You end up using the `switch` statement to check which `http method` is used and then which `url` is requested, and soon you end up with a spaghetti code in your API route that is hard to maintain and test. It would be great if we could use tried and tested `HTTP` framework directly inside the routes.
 
 So I decided to set up Koa.js to run inside the Next.js API route.
 
@@ -111,6 +113,30 @@ const router = new Router()
 
 For more info check out [Koa Router docs](https://github.com/koajs/router/blob/master/API.md#nested-routers)
 
+### Attaching a custom router
+
+There is a convenient method for attaching a custom router. Internally it sets the `prefix` path on the router,and calls `router.routes()` and `router.allowedMethods()`
+
+```ts
+import {Router, KoaApi} from 'nextjs-koa-api`
+
+const api = new KoaApi()
+const router = new Router()
+
+router.get('/',(ctx,next)=>{
+
+  ctx.body = 'hello'
+
+  return next()
+})
+
+api.attachRouter('/some/deep-path', router)
+
+```
+
+> Router options that are passed to the `KoaApi` are not associated with the custom router. They are only
+> applicable to the _default_ router that is created.
+
 ### Nextjs request and response objects
 
 Just like in the regular Kao.js app where the Node `request` and `response` objects are available on the `context` object via the `req` and `res` properties, the same is with the `KoaApi`
@@ -137,7 +163,7 @@ new KoaApi({ attachBody: false })
 
 ## Typescript
 
-This library exports everything from the Kao and Koa Router libraries, that includes all the types.
+This library exports everything from the Kao and Koa Router libraries, which includes all the types.
 
 ```ts
 import { Koa, KoaApi, Router, withKoaApi } from 'nextjs-koa-api'
