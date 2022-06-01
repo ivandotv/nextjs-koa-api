@@ -105,6 +105,10 @@ export function withKoaApi(koa: KoaApi<any, any>) {
  * @param path - path to attach the router to
  * @param router - router to attach
  */
-export function attachRouter(path: string, app: KoaApi, router: Router) {
+export function attachRouter(
+  path: string,
+  app: KoaApi<any, any>,
+  router: Router
+) {
   app.use(router.prefix(path).routes()).use(router.allowedMethods())
 }
