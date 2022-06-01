@@ -1,5 +1,12 @@
 # nextjs-koa-api
 
+## 1.1.0
+
+### Minor Changes
+
+- dd0c276: TypeScript: Change request `body` type from `any` to `unknown`.
+- 18c8a87: Implement `attachRouter` method
+
 ## 1.0.2
 
 ### Patch Changes
