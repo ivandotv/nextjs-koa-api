@@ -115,10 +115,10 @@ For more info check out [Koa Router docs](https://github.com/koajs/router/blob/m
 
 ### Attaching a custom router
 
-There is a convenient method for attaching a custom router. Internally it sets the `prefix` path on the router,and calls `router.routes()` and `router.allowedMethods()`
+There is a convenient function for attaching a custom router. Internally it sets the `prefix` path on the router,and calls `router.routes()` and `router.allowedMethods()`
 
 ```ts
-import {Router, KoaApi} from 'nextjs-koa-api`
+import {Router, KoaApi,attachRouter} from 'nextjs-koa-api`
 
 const api = new KoaApi()
 const router = new Router()
@@ -130,7 +130,7 @@ router.get('/',(ctx,next)=>{
   return next()
 })
 
-api.attachRouter('/some/deep-path', router)
+attachRouter('/some/deep-path',api, router)
 
 ```
 
