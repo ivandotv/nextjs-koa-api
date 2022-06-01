@@ -44,7 +44,7 @@ Koa API options
 
 #### Defined in
 
-[lib/koa-api/src/koa-api.ts:33](https://github.com/ivandotv/nextjs-koa-api/blob/5ef1256/lib/koa-api/src/koa-api.ts#L33)
+[lib/koa-api/src/koa-api.ts:33](https://github.com/ivandotv/nextjs-koa-api/blob/35b7030/lib/koa-api/src/koa-api.ts#L33)
 
 ---
 
@@ -65,7 +65,7 @@ Koa API options
 
 #### Defined in
 
-[lib/koa-api/src/koa-api.ts:17](https://github.com/ivandotv/nextjs-koa-api/blob/5ef1256/lib/koa-api/src/koa-api.ts#L17)
+[lib/koa-api/src/koa-api.ts:17](https://github.com/ivandotv/nextjs-koa-api/blob/35b7030/lib/koa-api/src/koa-api.ts#L17)
 
 ## Functions
 
@@ -80,7 +80,7 @@ Attaches router to a particular path. Internally it setups a prefix on the route
 | Name     | Type                                                                                                                                   | Description                  |
 | :------- | :------------------------------------------------------------------------------------------------------------------------------------- | :--------------------------- |
 | `path`   | `string`                                                                                                                               | path to attach the router to |
-| `app`    | [`KoaApi`](classes/KoaApi.md)<[`DefaultState`](interfaces/Koa.DefaultState.md), [`DefaultContext`](interfaces/Koa.DefaultContext.md)\> | -                            |
+| `app`    | [`KoaApi`](classes/KoaApi.md)<`any`, `any`\>                                                                                           | -                            |
 | `router` | [`Router`](classes/Router.md)<[`DefaultState`](interfaces/Koa.DefaultState.md), [`DefaultContext`](interfaces/Koa.DefaultContext.md)\> | router to attach             |
 
 #### Returns
@@ -89,7 +89,7 @@ Attaches router to a particular path. Internally it setups a prefix on the route
 
 #### Defined in
 
-[lib/koa-api/src/koa-api.ts:108](https://github.com/ivandotv/nextjs-koa-api/blob/5ef1256/lib/koa-api/src/koa-api.ts#L108)
+[lib/koa-api/src/koa-api.ts:108](https://github.com/ivandotv/nextjs-koa-api/blob/35b7030/lib/koa-api/src/koa-api.ts#L108)
 
 ---
 
@@ -125,4 +125,4 @@ It should be used as default export from the Next.js api route file
 
 #### Defined in
 
-[lib/koa-api/src/koa-api.ts:99](https://github.com/ivandotv/nextjs-koa-api/blob/5ef1256/lib/koa-api/src/koa-api.ts#L99)
+[lib/koa-api/src/koa-api.ts:99](https://github.com/ivandotv/nextjs-koa-api/blob/35b7030/lib/koa-api/src/koa-api.ts#L99)
