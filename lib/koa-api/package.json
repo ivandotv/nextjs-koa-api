@@ -68,7 +68,7 @@
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-tsdoc": "^0.2.16",
     "jest": "^28.1.0",
-    "jest-mock-console": "^1.2.3",
+    "jest-mock-console": "^2.0.0",
     "jest-watch-typeahead": "^1.1.0",
     "microbundle": "^0.15.0",
     "next": "12.1.6",
