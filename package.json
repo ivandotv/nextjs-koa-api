@@ -15,7 +15,7 @@
     "release": "pnpm multi run prepublishOnly --workspace-concurrency 1 && pnpm changeset publish && pnpm multi run postpublishOnly"
   },
   "dependencies": {
-    "husky": "^7.0.4",
+    "husky": "^8.0.0",
     "lint-staged": "^12.2.2",
     "prettier": "^2.5.1",
     "@changesets/cli": "^2.19.0",
