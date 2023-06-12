@@ -83,6 +83,6 @@
     "koa": "^2.13.4",
     "on-finished": "^2.4.1",
     "@types/koa": "^2.13.4",
-    "@types/koa__router": "^8.0.11"
+    "@types/koa__router": "^12.0.0"
   }
 }
