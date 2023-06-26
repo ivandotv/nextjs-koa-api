@@ -19,7 +19,7 @@
     "lint-staged": "^12.2.2",
     "prettier": "^2.5.1",
     "@changesets/cli": "^2.19.0",
-    "del": "^6.0.0",
+    "del": "^7.0.0",
     "minimist": "^1.2.5"
   }
 }
