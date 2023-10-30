@@ -79,7 +79,7 @@
     "typedoc-plugin-markdown": "^3.12.1"
   },
   "dependencies": {
-    "@koa/router": "^10.1.1",
+    "@koa/router": "^12.0.0",
     "koa": "^2.13.4",
     "on-finished": "^2.4.1",
     "@types/koa": "^2.13.4",
