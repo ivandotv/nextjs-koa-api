@@ -32,7 +32,7 @@ jobs:
       - name: Install dependencies
         uses: pnpm/action-setup@v2.2.2
         with:
-          version: 6.23.6
+          version: 6.35.1
           run_install: true
 
       - name: Lint source
